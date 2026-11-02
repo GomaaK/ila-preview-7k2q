@@ -1,0 +1,50 @@
+/* ILA prototype: additions only. Everything else is the client's own CSS (ila-tw.css, ila-theme.css, ila-fonts.css). */
+[x-cloak]{display:none !important}
+.w-10{width:2.5rem}
+.gap-y-4{row-gap:1rem}
+.text-red-700{color:#b91c1c}
+@media (min-width:1024px){.lg\:sticky{position:sticky}.lg\:top-28{top:7rem}}
+.proto-bar{background:#000;color:#EAE5DF;font-size:10px;letter-spacing:.18em;text-transform:uppercase;text-align:center;padding:.35rem 1rem;line-height:1.4}
+.proto-tag{display:inline-block;border:1px dashed #44202F;color:#44202F;font-size:9px;letter-spacing:.14em;text-transform:uppercase;padding:.1rem .45rem;font-weight:600;white-space:nowrap}
+.proto-note{font-size:11px;color:#78716c;line-height:1.5}
+.ila-prose h2{font-family:'Playfair Display',Georgia,serif;font-size:1.5rem;line-height:1.3;color:#1c1917;margin:2rem 0 .75rem;text-transform:uppercase;letter-spacing:.03em}
+.ila-prose h3{font-family:'Playfair Display',Georgia,serif;font-size:1.15rem;color:#44202F;margin:1.75rem 0 .5rem;text-transform:uppercase;letter-spacing:.05em}
+.ila-prose p{margin:0 0 1rem}
+.ila-prose ul{margin:0 0 1rem 1.1rem;list-style:disc}
+.ila-prose li{margin:.25rem 0}
+.tbc{display:inline-block;background:#F7F5F2;border:1px dashed #D8D1C7;color:#57534e;padding:.1rem .5rem;font-size:.8em}
+.size-table{width:100%;border-collapse:collapse;font-size:12px;text-align:left}
+.size-table th{background:#F7F5F2;padding:.6rem .7rem;text-transform:uppercase;letter-spacing:.06em;font-weight:600;border-bottom:1px solid #e7e5e4}
+.size-table td{padding:.6rem .7rem;border-bottom:1px solid #f5f5f4;color:#44403c}
+.size-table td:first-child{font-weight:700;color:#1c1917}
+.dummy-label{font-size:11px;line-height:1.5;color:#44202F;background:#EAE5DF;border-left:2px solid #44202F;padding:.5rem .75rem;margin:.75rem 0}
+.field-error{color:#b91c1c;font-size:11px;margin-top:.25rem}
+.form-input-ila.has-error{border-color:#b91c1c}
+.size-btn{min-width:3.25rem}
+.nav-active{color:#44202F;border-bottom:1px solid #44202F}
+@media (min-width:1024px) and (max-width:1279px){.ila-nav{column-gap:1rem !important}.ila-nav>*{margin-left:0 !important}}
+.ila-nav{display:flex;align-items:center;gap:1.5rem}
+@media (min-width:1280px){.ila-nav{gap:1.75rem}}
+@media (min-width:1024px) and (max-width:1279px){.ila-nav{gap:1rem}}
+.ila-nav a{margin:0 !important}
+.product-card-actions{z-index:5}
+.card-fav-on svg{fill:#44202F;color:#44202F}
+.ila-img-fallback{background:#F7F5F2}
+.sr-only-ila{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+
+/* ---- Brand guide typography: Plus Jakarta Sans (Regular/Medium/Bold/Extra Bold) for headlines AND body; Mrs Saint Delafield regular only, for sub-headlines/taglines ---- */
+body,.font-sans,.font-serif,button,input,select,textarea{font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
+.font-light{font-weight:400}
+.font-semibold{font-weight:700}
+h1.font-serif,h2.font-serif,h3.font-serif,h4.font-serif{font-weight:700;letter-spacing:.03em}
+.font-script{font-family:'Mrs Saint Delafield',cursive;font-weight:400 !important;font-synthesis:none;font-style:normal;letter-spacing:0;text-transform:none}
+.btn-ila-primary,.btn-ila-secondary,.btn-ila-white{font-weight:700}
+em,i,cite{font-style:normal}
+/* Wordmark (vector from the brand guide) with clear space */
+.ila-wordmark{display:block;height:auto}
+.wm-header{width:96px}
+.wm-menu{width:104px}
+.wm-foot{width:150px}
+.wm-statement{width:min(220px,60vw)}
+@media (min-width:640px){.wm-header{width:118px}}
+.ila-header{background:rgba(234,229,223,.96)}

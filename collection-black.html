@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="ila-root" content="">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16.png">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+  <meta name="theme-color" content="#44202F">
+  <title>Black Collection | I L Ā (prototype)</title>
+  <meta name="description" content="ILA. Made to matter. Quiet strength. Sculpted proportion. Tactile restraint.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="I L Ā">
+  <meta property="og:title" content="Black Collection">
+  <meta property="og:description" content="ILA. Made to matter. Quiet strength. Sculpted proportion. Tactile restraint.">
+  <link rel="stylesheet" href="assets/css/ila-fonts.css">
+  <style>:root{--ila-primary:68 32 47;--ila-secondary:234 229 223}</style>
+  <script defer src="assets/js/ila-icons.js"></script>
+  <link rel="stylesheet" href="assets/css/ila-theme.css">
+  <script defer src="data/prices.js"></script>
+  <script defer src="assets/js/ila-catalog.js"></script>
+  <script defer src="assets/js/ila-app.js"></script>
+  <script defer src="assets/js/vendor-alpine.min.js"></script>
+  <link rel="stylesheet" href="assets/css/ila-tw.css">
+  <link rel="stylesheet" href="assets/css/ila-extra.css">
+</head>
+<body class="min-h-full flex flex-col bg-white text-stone-900 selection:bg-eggplant selection:text-white" x-data="ilaShell()" @keydown.escape.window="searchOpen=false; mobileMenuOpen=false; $store.cart.close(); $store.quickView.close()">
+
+  <!-- Prototype banner (site-wide) -->
+  <div class="proto-bar" role="note">Prototype: prices and stock are placeholders</div>
+
+  <!-- Top Announcement Bar -->
+  <div class="bg-eggplant text-white text-[11px] uppercase tracking-[0.2em] py-2 px-4 text-center font-medium border-b border-eggplant-dark">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <span class="hidden sm:inline-block opacity-75">Women's First Collection</span>
+      <p class="mx-auto sm:mx-0">Made to matter.</p>
+      <div class="hidden sm:flex items-center space-x-4 opacity-75">
+        <a href="order-track.html" class="hover:opacity-100 transition-opacity">Track Order</a>
+        <a href="contact.html" class="hover:opacity-100 transition-opacity">Contacts</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Header -->
+  <header class="ila-header sticky top-0 z-40 backdrop-blur-md border-b border-sand/70 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 lg:grid-cols-12 items-center h-20">
+        <div class="lg:col-span-3 flex items-center gap-2">
+          <div class="flex items-center lg:hidden mr-2">
+            <button @click="mobileMenuOpen = true" type="button" class="p-1.5 text-stone-900 hover:text-eggplant focus:outline-none" aria-label="Open menu">
+              <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+            <button @click="searchOpen = true" type="button" class="p-1.5 text-stone-900 hover:text-eggplant ml-1" aria-label="Search">
+              <i data-lucide="search" class="w-5 h-5"></i>
+            </button>
+          </div>
+          <a href="index.html" class="inline-block group text-left">
+            <div class="text-eggplant group-hover:opacity-80 transition-opacity leading-none"><svg class="ila-wordmark wm-header" xmlns="http://www.w3.org/2000/svg" viewBox="416.04 382.50 388.23 92.59" role="img" aria-label="I L Ā" fill="currentColor"><path d="M 416.035156 475.089844 L 416.035156 471.234375 C 419.066406 471.105469 421.335938 470.710938 422.851562 470.050781 C 424.367188 469.390625 425.390625 468.074219 425.917969 466.097656 C 426.441406 464.121094 426.707031 461.09375 426.707031 457.007812 L 426.707031 417.085938 C 426.707031 413.332031 426.476562 410.464844 426.015625 408.492188 C 425.554688 406.511719 424.632812 405.113281 423.25 404.289062 C 421.867188 403.46875 419.789062 402.988281 417.023438 402.859375 L 417.023438 399.003906 L 448.542969 399.003906 L 448.542969 402.859375 C 445.777344 402.921875 443.703125 403.371094 442.320312 404.191406 C 440.9375 405.015625 440.03125 406.449219 439.601562 408.492188 C 439.171875 410.53125 438.960938 413.527344 438.960938 417.480469 L 438.960938 456.613281 C 438.960938 460.828125 439.207031 463.957031 439.699219 466 C 440.195312 468.042969 441.199219 469.390625 442.714844 470.050781 C 444.230469 470.710938 446.5 471.105469 449.53125 471.234375 L 449.53125 475.089844 Z M 416.035156 475.089844 "/><path d="M 570.324219 475.089844 L 570.324219 471.234375 C 573.421875 471.105469 575.726562 470.757812 577.242188 470.199219 C 578.757812 469.640625 579.761719 468.566406 580.253906 466.988281 C 580.75 465.40625 580.996094 463.070312 580.996094 459.972656 L 580.996094 414.125 C 580.996094 411.027344 580.765625 408.703125 580.304688 407.15625 C 579.84375 405.609375 578.9375 404.539062 577.589844 403.945312 C 576.234375 403.351562 574.179688 402.988281 571.414062 402.859375 L 571.414062 399.003906 L 603.328125 399.003906 L 603.328125 402.859375 C 600.429688 402.921875 598.269531 403.269531 596.855469 403.894531 C 595.4375 404.519531 594.484375 405.660156 593.992188 407.304688 C 593.496094 408.953125 593.25 411.453125 593.25 414.8125 L 593.25 456.808594 C 593.25 460.5 593.777344 463.300781 594.828125 465.207031 C 595.882812 467.121094 597.710938 468.421875 600.316406 469.109375 C 602.914062 469.804688 606.492188 470.148438 611.035156 470.148438 C 616.109375 470.148438 620.125 469.738281 623.09375 468.914062 C 626.054688 468.089844 628.34375 466.527344 629.957031 464.21875 C 631.570312 461.914062 632.839844 458.589844 633.761719 454.242188 L 637.617188 454.242188 L 636.132812 475.089844 Z M 570.324219 475.089844 "/><path d="M 777.589844 389.222656 L 748.242188 389.222656 L 748.242188 382.503906 L 777.589844 382.503906 Z M 748.140625 444.160156 L 771.167969 444.160156 L 760.097656 414.714844 L 759.703125 414.714844 Z M 723.441406 475.089844 L 723.441406 471.234375 C 726.535156 470.90625 728.875 470.199219 730.457031 469.109375 C 732.035156 468.023438 733.386719 466.066406 734.507812 463.230469 L 760.296875 398.507812 L 765.929688 398.507812 L 788.855469 455.230469 C 790.367188 458.722656 791.652344 461.519531 792.707031 463.625 C 793.757812 465.738281 794.816406 467.300781 795.867188 468.320312 C 796.921875 469.34375 798.09375 470.050781 799.378906 470.445312 C 800.660156 470.839844 802.292969 471.070312 804.269531 471.136719 L 804.269531 475.089844 L 769.683594 475.089844 L 769.683594 471.136719 C 773.042969 471.070312 775.398438 470.742188 776.75 470.148438 C 778.097656 469.558594 778.773438 468.503906 778.773438 466.988281 C 778.773438 465.800781 778.59375 464.566406 778.230469 463.28125 C 777.867188 461.996094 777.257812 460.269531 776.402344 458.09375 L 773.144531 449.597656 L 746.066406 449.597656 C 744.089844 454.140625 742.671875 457.765625 741.816406 460.464844 C 740.960938 463.167969 740.535156 465.175781 740.535156 466.492188 C 740.535156 468.402344 741.207031 469.671875 742.558594 470.296875 C 743.910156 470.921875 746 471.234375 748.835938 471.234375 L 748.835938 475.089844 Z M 723.441406 475.089844 "/></svg></div>
+            <div class="font-script text-xs sm:text-[13px] text-stone-500 group-hover:text-eggplant transition-colors mt-0.5">Made to matter.</div>
+          </a>
+        </div>
+
+        <div class="hidden lg:flex lg:col-span-6 justify-center">
+          <nav class="ila-nav text-[11px] font-medium uppercase tracking-[0.18em]" aria-label="Main">
+            <a href="shop.html" class="text-stone-900 hover:text-eggplant transition-colors py-2 flex items-center gap-1.5">Women</a>
+            <a href="shop.html?category=leather" class="text-stone-900 hover:text-eggplant transition-colors py-2 flex items-center gap-1.5">Leather</a>
+            <a href="shop.html?category=denim" class="text-stone-900 hover:text-eggplant transition-colors py-2 flex items-center gap-1.5">Denim</a>
+            <a href="shop.html?category=knitwear" class="text-stone-900 hover:text-eggplant transition-colors py-2 flex items-center gap-1.5">Knitwear</a>
+            <a href="shop.html?category=tailoring" class="text-stone-900 hover:text-eggplant transition-colors py-2 flex items-center gap-1.5">Tailoring</a>
+            <a href="shop.html?category=tops" class="text-stone-900 hover:text-eggplant transition-colors py-2 flex items-center gap-1.5">Tops</a>
+            <a href="journal.html" class="text-stone-900 hover:text-eggplant transition-colors py-2 flex items-center gap-1.5">Journal</a>
+          </nav>
+        </div>
+
+        <div class="lg:col-span-3 flex items-center justify-end space-x-2 sm:space-x-4 text-stone-900">
+          <button @click="searchOpen = true" type="button" class="hidden lg:flex items-center text-xs tracking-wider uppercase text-stone-600 hover:text-eggplant p-2 space-x-2" aria-label="Search catalogue">
+            <i data-lucide="search" class="w-4 h-4"></i>
+            <span class="text-[11px] font-medium">Search</span>
+          </button>
+          <button type="button" data-proto-toast="Accounts and sign-in are not part of this prototype." class="p-2 text-stone-800 hover:text-eggplant transition-colors" title="Account (prototype: not available)" aria-label="Account">
+            <i data-lucide="user" class="w-5 h-5"></i>
+          </button>
+          <button type="button" id="header-wishlist" data-proto-toast="Saved pieces" class="p-2 text-stone-800 hover:text-eggplant transition-colors relative" title="Saved pieces" aria-label="Saved pieces">
+            <i data-lucide="heart" class="w-5 h-5"></i>
+            <span id="wishlist-counter-badge" class="hidden absolute top-1 right-1 bg-eggplant text-white text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
+          </button>
+          <button @click="$store.cart.open()" type="button" class="p-2 text-stone-900 hover:text-eggplant transition-colors relative flex items-center gap-1.5" aria-label="Shopping Bag" id="cart-trigger">
+            <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+            <span class="text-xs font-semibold" x-text="'(' + $store.cart.data.items_count + ')'">(0)</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div x-show="mobileMenuOpen" x-cloak class="relative z-50 lg:hidden" role="dialog" aria-modal="true" style="display: none;">
+    <div x-show="mobileMenuOpen" x-transition:enter="transition-opacity ease-linear duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition-opacity ease-linear duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="fixed inset-0 bg-black/60 backdrop-blur-sm" @click="mobileMenuOpen = false"></div>
+    <div class="fixed inset-0 flex pointer-events-none">
+      <div x-show="mobileMenuOpen" x-transition:enter="transition ease-in-out duration-300 transform" x-transition:enter-start="-translate-x-full" x-transition:enter-end="translate-x-0" x-transition:leave="transition ease-in-out duration-300 transform" x-transition:leave-start="translate-x-0" x-transition:leave-end="-translate-x-full" class="pointer-events-auto relative flex-1 w-full max-w-xs bg-eggshell flex flex-col p-6 shadow-2xl overflow-y-auto">
+        <div class="flex items-center justify-between pb-6 border-b border-sand">
+          <div>
+            <div class="text-eggplant"><svg class="ila-wordmark wm-menu" xmlns="http://www.w3.org/2000/svg" viewBox="416.04 382.50 388.23 92.59" role="img" aria-label="I L Ā" fill="currentColor"><path d="M 416.035156 475.089844 L 416.035156 471.234375 C 419.066406 471.105469 421.335938 470.710938 422.851562 470.050781 C 424.367188 469.390625 425.390625 468.074219 425.917969 466.097656 C 426.441406 464.121094 426.707031 461.09375 426.707031 457.007812 L 426.707031 417.085938 C 426.707031 413.332031 426.476562 410.464844 426.015625 408.492188 C 425.554688 406.511719 424.632812 405.113281 423.25 404.289062 C 421.867188 403.46875 419.789062 402.988281 417.023438 402.859375 L 417.023438 399.003906 L 448.542969 399.003906 L 448.542969 402.859375 C 445.777344 402.921875 443.703125 403.371094 442.320312 404.191406 C 440.9375 405.015625 440.03125 406.449219 439.601562 408.492188 C 439.171875 410.53125 438.960938 413.527344 438.960938 417.480469 L 438.960938 456.613281 C 438.960938 460.828125 439.207031 463.957031 439.699219 466 C 440.195312 468.042969 441.199219 469.390625 442.714844 470.050781 C 444.230469 470.710938 446.5 471.105469 449.53125 471.234375 L 449.53125 475.089844 Z M 416.035156 475.089844 "/><path d="M 570.324219 475.089844 L 570.324219 471.234375 C 573.421875 471.105469 575.726562 470.757812 577.242188 470.199219 C 578.757812 469.640625 579.761719 468.566406 580.253906 466.988281 C 580.75 465.40625 580.996094 463.070312 580.996094 459.972656 L 580.996094 414.125 C 580.996094 411.027344 580.765625 408.703125 580.304688 407.15625 C 579.84375 405.609375 578.9375 404.539062 577.589844 403.945312 C 576.234375 403.351562 574.179688 402.988281 571.414062 402.859375 L 571.414062 399.003906 L 603.328125 399.003906 L 603.328125 402.859375 C 600.429688 402.921875 598.269531 403.269531 596.855469 403.894531 C 595.4375 404.519531 594.484375 405.660156 593.992188 407.304688 C 593.496094 408.953125 593.25 411.453125 593.25 414.8125 L 593.25 456.808594 C 593.25 460.5 593.777344 463.300781 594.828125 465.207031 C 595.882812 467.121094 597.710938 468.421875 600.316406 469.109375 C 602.914062 469.804688 606.492188 470.148438 611.035156 470.148438 C 616.109375 470.148438 620.125 469.738281 623.09375 468.914062 C 626.054688 468.089844 628.34375 466.527344 629.957031 464.21875 C 631.570312 461.914062 632.839844 458.589844 633.761719 454.242188 L 637.617188 454.242188 L 636.132812 475.089844 Z M 570.324219 475.089844 "/><path d="M 777.589844 389.222656 L 748.242188 389.222656 L 748.242188 382.503906 L 777.589844 382.503906 Z M 748.140625 444.160156 L 771.167969 444.160156 L 760.097656 414.714844 L 759.703125 414.714844 Z M 723.441406 475.089844 L 723.441406 471.234375 C 726.535156 470.90625 728.875 470.199219 730.457031 469.109375 C 732.035156 468.023438 733.386719 466.066406 734.507812 463.230469 L 760.296875 398.507812 L 765.929688 398.507812 L 788.855469 455.230469 C 790.367188 458.722656 791.652344 461.519531 792.707031 463.625 C 793.757812 465.738281 794.816406 467.300781 795.867188 468.320312 C 796.921875 469.34375 798.09375 470.050781 799.378906 470.445312 C 800.660156 470.839844 802.292969 471.070312 804.269531 471.136719 L 804.269531 475.089844 L 769.683594 475.089844 L 769.683594 471.136719 C 773.042969 471.070312 775.398438 470.742188 776.75 470.148438 C 778.097656 469.558594 778.773438 468.503906 778.773438 466.988281 C 778.773438 465.800781 778.59375 464.566406 778.230469 463.28125 C 777.867188 461.996094 777.257812 460.269531 776.402344 458.09375 L 773.144531 449.597656 L 746.066406 449.597656 C 744.089844 454.140625 742.671875 457.765625 741.816406 460.464844 C 740.960938 463.167969 740.535156 465.175781 740.535156 466.492188 C 740.535156 468.402344 741.207031 469.671875 742.558594 470.296875 C 743.910156 470.921875 746 471.234375 748.835938 471.234375 L 748.835938 475.089844 Z M 723.441406 475.089844 "/></svg></div>
+            <div class="font-script text-xs text-stone-600">Made to matter.</div>
+          </div>
+          <button @click="mobileMenuOpen = false" class="p-2 text-stone-600 hover:text-eggplant" aria-label="Close menu"><i data-lucide="x" class="w-6 h-6"></i></button>
+        </div>
+        <nav class="mt-6 flex-1 space-y-3 text-sm uppercase tracking-widest font-medium" aria-label="Mobile">
+          <a href="shop.html" class="flex items-center justify-between py-2.5 text-stone-900 border-b border-sand/50"><span>Women</span></a>
+          <a href="shop.html?category=leather" class="flex items-center justify-between py-2.5 text-stone-900 border-b border-sand/50"><span>Leather</span></a>
+          <a href="shop.html?category=denim" class="flex items-center justify-between py-2.5 text-stone-900 border-b border-sand/50"><span>Denim</span></a>
+          <a href="shop.html?category=knitwear" class="flex items-center justify-between py-2.5 text-stone-900 border-b border-sand/50"><span>Knitwear</span></a>
+          <a href="shop.html?category=tailoring" class="flex items-center justify-between py-2.5 text-stone-900 border-b border-sand/50"><span>Tailoring</span></a>
+          <a href="shop.html?category=tops" class="flex items-center justify-between py-2.5 text-stone-900 border-b border-sand/50"><span>Tops</span></a>
+          <a href="journal.html" class="flex items-center justify-between py-2.5 text-stone-900 border-b border-sand/50"><span>Journal</span></a>
+          <a href="contact.html" class="block py-2 text-stone-700">Contacts</a>
+          <a href="order-track.html" class="block py-2 text-stone-700">Track Order</a>
+        </nav>
+        <div class="pt-6 border-t border-sand"><p class="proto-note">Prototype: prices and stock are placeholders</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cart Drawer (client-side, localStorage) -->
+  <div x-show="$store.cart.isOpen" x-cloak class="relative z-50" role="dialog" aria-modal="true" aria-label="Shopping bag" style="display: none;" id="cart-drawer">
+    <div x-show="$store.cart.isOpen" x-transition:enter="transition-opacity ease-linear duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition-opacity ease-linear duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="fixed inset-0 bg-black/60 backdrop-blur-sm" @click="$store.cart.close()"></div>
+    <div class="fixed inset-0 overflow-hidden pointer-events-none">
+      <div class="absolute inset-0 overflow-hidden">
+        <div class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
+          <div x-show="$store.cart.isOpen" x-transition:enter="transform transition ease-in-out duration-300" x-transition:enter-start="translate-x-full" x-transition:enter-end="translate-x-0" x-transition:leave="transform transition ease-in-out duration-300" x-transition:leave-start="translate-x-0" x-transition:leave-end="translate-x-full" class="pointer-events-auto w-screen max-w-md bg-white flex flex-col shadow-2xl">
+            <div class="p-5 border-b border-stone-200 flex items-center justify-between bg-sand-light">
+              <div class="flex items-center space-x-2">
+                <span class="text-sm font-semibold uppercase tracking-wider text-eggplant">Shopping Bag</span>
+                <span class="text-xs text-stone-500" x-text="'(' + $store.cart.data.items_count + ' items)'"></span>
+              </div>
+              <button @click="$store.cart.close()" class="p-1 text-stone-500 hover:text-stone-900" aria-label="Close bag"><i data-lucide="x" class="w-5 h-5"></i></button>
+            </div>
+
+            <div class="bg-eggshell/60 p-3.5 border-b border-sand/50 text-xs">
+              <p class="text-stone-700">Shipping: <span class="tbc">To be confirmed</span> &middot; Prototype prices</p>
+            </div>
+
+            <div class="flex-1 overflow-y-auto p-5 divide-y divide-stone-100">
+              <template x-if="$store.cart.data.items.length === 0">
+                <div class="text-center py-16 text-stone-500">
+                  <svg class="w-12 h-12 mx-auto text-stone-300 mb-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                  <p class="font-serif text-lg text-stone-800">Your shopping bag is empty.</p>
+                  <p class="text-xs text-stone-500 mt-1">Discover the first women's collection.</p>
+                  <a href="shop.html" @click="$store.cart.close()" class="mt-6 inline-block btn-ila-primary text-xs py-2.5 px-6">Explore Catalog</a>
+                </div>
+              </template>
+              <template x-for="item in $store.cart.data.items" :key="item.id">
+                <div class="py-4 flex gap-4" data-cart-line>
+                  <img decoding="async" :src="item.image" :alt="item.product_name" class="w-20 h-24 object-cover bg-sand-light flex-shrink-0 border border-stone-200">
+                  <div class="flex-1 flex flex-col justify-between">
+                    <div>
+                      <div class="flex justify-between items-start">
+                        <a :href="item.url" class="text-xs font-semibold text-stone-900 hover:text-eggplant uppercase tracking-wider" x-text="item.product_name"></a>
+                        <button @click="$store.cart.removeItem(item.id)" class="text-stone-400 hover:text-rose-600 transition-colors p-1" title="Remove" aria-label="Remove item">
+                          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+                        </button>
+                      </div>
+                      <p class="text-[11px] text-stone-500 mt-0.5" x-text="item.variant_name"></p>
+                      <p class="text-xs font-medium text-eggplant mt-1" x-text="item.price_label"></p>
+                    </div>
+                    <div class="flex items-center justify-between mt-3">
+                      <div class="flex items-center border border-stone-300">
+                        <button @click="$store.cart.updateQty(item.id, item.quantity - 1)" class="px-2 py-0.5 text-xs text-stone-600 hover:bg-stone-100" aria-label="Decrease quantity">-</button>
+                        <span class="px-2 py-0.5 text-xs font-semibold text-stone-900 min-w-[24px] text-center" x-text="item.quantity"></span>
+                        <button @click="$store.cart.updateQty(item.id, item.quantity + 1)" class="px-2 py-0.5 text-xs text-stone-600 hover:bg-stone-100" aria-label="Increase quantity">+</button>
+                      </div>
+                      <span class="text-xs font-semibold text-stone-900" x-text="item.line_label"></span>
+                    </div>
+                  </div>
+                </div>
+              </template>
+            </div>
+
+            <template x-if="$store.cart.data.items.length > 0">
+              <div class="p-5 border-t border-stone-200 bg-sand-light space-y-4">
+                <div class="flex justify-between items-center text-sm font-semibold text-stone-900 pt-2">
+                  <span class="uppercase tracking-wider">Subtotal</span>
+                  <span class="text-base text-eggplant font-bold" x-text="$store.cart.data.subtotal_label" data-cart-subtotal></span>
+                </div>
+                <p class="text-[10px] text-stone-500 text-center">Shipping and taxes: to be confirmed. Prototype prices.</p>
+                <div class="grid grid-cols-2 gap-2.5">
+                  <a href="cart.html" @click="$store.cart.close()" class="btn-ila-secondary text-xs py-3 text-center w-full">View Bag</a>
+                  <a href="checkout.html" class="btn-ila-primary text-xs py-3 text-center w-full" id="drawer-checkout">Checkout</a>
+                </div>
+              </div>
+            </template>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Global Search Overlay (client-side over the 11 products) -->
+  <div x-show="searchOpen" x-cloak class="relative z-50" role="dialog" aria-modal="true" aria-label="Search" style="display: none;">
+    <div x-show="searchOpen" x-transition:enter="transition-opacity ease-linear duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" class="fixed inset-0 bg-black/75 backdrop-blur-md" @click="searchOpen = false"></div>
+    <div class="fixed inset-0 z-10 overflow-y-auto p-4 sm:p-6 md:p-20 pointer-events-none">
+      <div x-show="searchOpen" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" class="pointer-events-auto mx-auto max-w-2xl transform divide-y divide-stone-200 overflow-hidden bg-white shadow-2xl transition-all">
+        <div class="relative flex items-center px-4 py-3">
+          <i data-lucide="search" class="w-5 h-5 text-stone-400 mr-3"></i>
+          <input type="text" x-model="searchQuery" x-effect="if(searchOpen){ $nextTick(()=>$el.focus()) }" placeholder="Search denim, leather, knitwear, tailoring..." aria-label="Search products" class="h-10 w-full border-0 bg-transparent text-stone-900 placeholder-stone-400 focus:outline-none focus:ring-0 text-sm">
+          <button @click="searchOpen = false" class="p-1 text-stone-400 hover:text-stone-800" aria-label="Close search"><i data-lucide="x" class="w-5 h-5"></i></button>
+        </div>
+        <div class="p-6 max-h-96 overflow-y-auto">
+          <template x-if="searchResults && searchResults.length === 0">
+            <div class="py-8 text-center text-stone-500">
+              <p class="text-sm font-medium">No results found for "<span x-text="searchQuery"></span>"</p>
+              <p class="text-xs text-stone-400 mt-1">Try: Denim, Leather, Knitwear, Tailoring or Tops.</p>
+            </div>
+          </template>
+          <template x-if="searchResults && searchResults.length > 0">
+            <div>
+              <h4 class="text-[10px] uppercase tracking-widest font-semibold text-stone-400 mb-3">Products</h4>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
+                <template x-for="p in searchResults" :key="p.slug">
+                  <a :href="p.url" class="flex items-center gap-3 p-2 hover:bg-eggshell/50 transition-colors group">
+                    <img decoding="async" :src="p.image" :alt="p.name" class="w-12 h-16 object-cover bg-sand-light border border-stone-200">
+                    <div>
+                      <p class="text-xs font-semibold text-stone-900 group-hover:text-eggplant" x-text="p.name"></p>
+                      <p class="text-[11px] text-stone-500" x-text="p.category_name"></p>
+                      <p class="text-xs text-eggplant font-medium mt-0.5" x-text="$store.cart.priceLabel(p.slug)"></p>
+                    </div>
+                  </a>
+                </template>
+              </div>
+            </div>
+          </template>
+          <template x-if="!searchResults">
+            <div class="space-y-4">
+              <h4 class="text-[10px] uppercase tracking-widest font-semibold text-stone-400">Popular Searches</h4>
+              <div class="flex flex-wrap gap-2">
+                <a href="collection-maroon.html" class="px-3 py-1 bg-eggshell text-stone-800 text-xs hover:bg-eggplant hover:text-white transition-colors">Maroon Collection</a>
+                <a href="collection-black.html" class="px-3 py-1 bg-eggshell text-stone-800 text-xs hover:bg-eggplant hover:text-white transition-colors">Black Collection</a>
+                <a href="shop.html?category=denim" class="px-3 py-1 bg-eggshell text-stone-800 text-xs hover:bg-eggplant hover:text-white transition-colors">Denim</a>
+                <a href="shop.html?category=leather" class="px-3 py-1 bg-eggshell text-stone-800 text-xs hover:bg-eggplant hover:text-white transition-colors">Leather Jackets</a>
+                <a href="shop.html?category=knitwear" class="px-3 py-1 bg-eggshell text-stone-800 text-xs hover:bg-eggplant hover:text-white transition-colors">Knit Sets</a>
+                <a href="shop.html?category=tops" class="px-3 py-1 bg-eggshell text-stone-800 text-xs hover:bg-eggplant hover:text-white transition-colors">Tops</a>
+              </div>
+            </div>
+          </template>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick View Modal (client-side) -->
+  <div x-show="$store.quickView.isOpen" x-cloak class="relative z-50" role="dialog" aria-modal="true" aria-label="Quick view" style="display: none;">
+    <div x-show="$store.quickView.isOpen" x-transition:enter="transition-opacity ease-linear duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" class="fixed inset-0 bg-black/75 backdrop-blur-md" @click="$store.quickView.close()"></div>
+    <div class="fixed inset-0 z-10 overflow-y-auto p-4 sm:p-6 md:p-12 flex items-center justify-center pointer-events-none">
+      <div x-show="$store.quickView.isOpen" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" class="pointer-events-auto relative w-full max-w-3xl bg-white shadow-2xl overflow-hidden">
+        <button @click="$store.quickView.close()" class="absolute top-4 right-4 z-20 p-2 text-stone-500 hover:text-stone-900 bg-white/80 rounded-full" aria-label="Close quick view"><i data-lucide="x" class="w-5 h-5"></i></button>
+        <template x-if="$store.quickView.product">
+          <div class="grid grid-cols-1 sm:grid-cols-2">
+            <div class="bg-sand-light aspect-[3/4] sm:aspect-auto sm:h-full max-h-[50vh] sm:max-h-none overflow-hidden">
+              <img :src="$store.quickView.img($store.quickView.product)" :alt="$store.quickView.product.name" class="w-full h-full object-cover">
+            </div>
+            <div class="p-6 space-y-4">
+              <div class="text-[11px] text-stone-500 uppercase tracking-widest" x-text="$store.quickView.product.category_name"></div>
+              <h3 class="font-serif text-xl text-stone-900 leading-tight" x-text="$store.quickView.product.name"></h3>
+              <div class="flex items-baseline gap-2"><span class="text-lg font-bold text-eggplant" x-text="$store.cart.priceLabel($store.quickView.product.slug)"></span><span class="proto-tag">Prototype price</span></div>
+              <p class="text-xs text-stone-700 leading-relaxed font-light" x-text="$store.quickView.product.description"></p>
+              <div>
+                <div class="text-xs font-bold uppercase tracking-wider text-eggplant mb-2">Select Size</div>
+                <div class="flex flex-wrap gap-2">
+                  <template x-for="s in $store.quickView.product.sizes" :key="s">
+                    <button type="button" @click="$store.quickView.size = s; $store.quickView.error = ''" class="size-btn px-3 py-2 text-xs font-semibold uppercase tracking-wider border transition-all" :class="$store.quickView.size === s ? 'border-eggplant bg-eggplant text-white' : 'border-stone-300 bg-white text-stone-800 hover:border-stone-500'" x-text="s"></button>
+                  </template>
+                </div>
+                <p class="field-error" x-show="$store.quickView.error" x-text="$store.quickView.error"></p>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="flex items-center border border-stone-300">
+                  <button @click="$store.quickView.qty = Math.max(1, $store.quickView.qty - 1)" class="px-3 py-2.5 text-stone-600 hover:bg-stone-100" aria-label="Decrease quantity">-</button>
+                  <span class="px-3 py-2.5 text-xs font-bold text-stone-900 min-w-[32px] text-center" x-text="$store.quickView.qty"></span>
+                  <button @click="$store.quickView.qty = Math.min(10, $store.quickView.qty + 1)" class="px-3 py-2.5 text-stone-600 hover:bg-stone-100" aria-label="Increase quantity">+</button>
+                </div>
+                <button type="button" @click="$store.quickView.add()" class="flex-1 btn-ila-primary text-xs py-3 uppercase tracking-widest font-semibold">Add to Shopping Bag</button>
+              </div>
+              <a :href="$store.quickView.url($store.quickView.product)" class="inline-block text-xs uppercase tracking-widest font-semibold text-eggplant border-b border-eggplant pb-0.5">View full details &rarr;</a>
+            </div>
+          </div>
+        </template>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div x-show="$store.toast.visible" x-cloak x-transition:enter="transition ease-out duration-300 transform" x-transition:enter-start="translate-y-4 opacity-0" x-transition:enter-end="translate-y-0 opacity-100" x-transition:leave="transition ease-in duration-200 transform" x-transition:leave-start="translate-y-0 opacity-100" x-transition:leave-end="translate-y-4 opacity-0" class="fixed bottom-6 right-6 z-50 max-w-sm w-[calc(100%-3rem)] bg-eggplant text-white p-4 shadow-2xl border border-eggplant-dark flex items-center justify-between" style="display: none;" role="status">
+    <div class="flex items-center space-x-3">
+      <i data-lucide="check-circle-2" class="w-5 h-5 text-eggshell flex-shrink-0"></i>
+      <p class="text-xs font-medium tracking-wide" x-text="$store.toast.message"></p>
+    </div>
+    <button @click="$store.toast.visible = false" class="text-white/60 hover:text-white ml-3" aria-label="Dismiss"><i data-lucide="x" class="w-4 h-4"></i></button>
+  </div>
+
+  <main class="flex-grow">
+
+<div class="bg-black text-eggshell py-16 sm:py-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+    <div class="lg:col-span-6 space-y-5 text-center lg:text-left">
+      <span class="font-script text-5xl sm:text-6xl text-eggshell block">Black Collection</span>
+      
+      <h1 class="font-serif text-2xl sm:text-3xl uppercase tracking-wide">Quiet strength. Sculpted proportion. Tactile restraint.</h1>
+      <p class="text-[11px] opacity-70 leading-relaxed max-w-md mx-auto lg:mx-0">Campaign placeholder photos from the ILA brand guide. Which pieces belong to this collection: to be confirmed. Until then, the whole women's collection is shown in the shop.</p>
+      <div class="pt-2"><a href="shop.html" class="btn-ila-white text-xs py-3.5 px-8">Shop all women's pieces</a></div>
+    </div>
+    <div class="lg:col-span-6 grid grid-cols-2 gap-4">
+      <div class="aspect-[3/4] overflow-hidden bg-sand"><img src="img/guide-black-collection.jpg" alt="Black Collection campaign placeholder photo from the ILA brand guide" class="w-full h-full object-cover"></div>
+      <div class="aspect-[3/4] overflow-hidden bg-sand"><img loading="lazy" src="img/guide-lookbook.jpg" alt="Campaign placeholder photo from the ILA brand guide" class="w-full h-full object-cover"></div>
+    </div>
+  </div>
+</div>
+  </main>
+
+  <footer class="bg-eggplant text-eggshell border-t border-eggplant-dark mt-24">
+    <div class="border-b border-eggplant-light/40 py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <div class="lg:col-span-6 space-y-2">
+          <span class="font-script text-2xl text-sand block">Made to matter.</span>
+          <h3 class="font-serif text-2xl sm:text-3xl text-white tracking-wide">ILA</h3>
+          <p class="text-xs text-sand/80 max-w-md">Private invitations and new releases. Newsletter copy to be confirmed.</p>
+        </div>
+        <div class="lg:col-span-6" x-data="{ email: '' }">
+          <form @submit.prevent="Alpine.store('toast').show('Prototype: nothing was sent or stored.', 'info'); email = ''" class="flex flex-col sm:flex-row gap-2.5">
+            <input type="email" x-model="email" required placeholder="Enter your email address" aria-label="Email address" class="bg-eggplant-dark/80 border border-eggplant-light text-white text-xs px-4 py-3.5 focus:outline-none focus:border-eggshell flex-1 placeholder-sand/40">
+            <button type="submit" class="btn-ila-white text-xs whitespace-nowrap py-3.5 px-8">Subscribe</button>
+          </form>
+          <p class="text-[10px] text-sand/60 mt-2">Prototype: the form is not connected to anything.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 text-xs">
+      <div class="col-span-2 space-y-4">
+        <div class="text-eggshell"><svg class="ila-wordmark wm-foot" xmlns="http://www.w3.org/2000/svg" viewBox="416.04 382.50 388.23 92.59" role="img" aria-label="I L Ā" fill="currentColor"><path d="M 416.035156 475.089844 L 416.035156 471.234375 C 419.066406 471.105469 421.335938 470.710938 422.851562 470.050781 C 424.367188 469.390625 425.390625 468.074219 425.917969 466.097656 C 426.441406 464.121094 426.707031 461.09375 426.707031 457.007812 L 426.707031 417.085938 C 426.707031 413.332031 426.476562 410.464844 426.015625 408.492188 C 425.554688 406.511719 424.632812 405.113281 423.25 404.289062 C 421.867188 403.46875 419.789062 402.988281 417.023438 402.859375 L 417.023438 399.003906 L 448.542969 399.003906 L 448.542969 402.859375 C 445.777344 402.921875 443.703125 403.371094 442.320312 404.191406 C 440.9375 405.015625 440.03125 406.449219 439.601562 408.492188 C 439.171875 410.53125 438.960938 413.527344 438.960938 417.480469 L 438.960938 456.613281 C 438.960938 460.828125 439.207031 463.957031 439.699219 466 C 440.195312 468.042969 441.199219 469.390625 442.714844 470.050781 C 444.230469 470.710938 446.5 471.105469 449.53125 471.234375 L 449.53125 475.089844 Z M 416.035156 475.089844 "/><path d="M 570.324219 475.089844 L 570.324219 471.234375 C 573.421875 471.105469 575.726562 470.757812 577.242188 470.199219 C 578.757812 469.640625 579.761719 468.566406 580.253906 466.988281 C 580.75 465.40625 580.996094 463.070312 580.996094 459.972656 L 580.996094 414.125 C 580.996094 411.027344 580.765625 408.703125 580.304688 407.15625 C 579.84375 405.609375 578.9375 404.539062 577.589844 403.945312 C 576.234375 403.351562 574.179688 402.988281 571.414062 402.859375 L 571.414062 399.003906 L 603.328125 399.003906 L 603.328125 402.859375 C 600.429688 402.921875 598.269531 403.269531 596.855469 403.894531 C 595.4375 404.519531 594.484375 405.660156 593.992188 407.304688 C 593.496094 408.953125 593.25 411.453125 593.25 414.8125 L 593.25 456.808594 C 593.25 460.5 593.777344 463.300781 594.828125 465.207031 C 595.882812 467.121094 597.710938 468.421875 600.316406 469.109375 C 602.914062 469.804688 606.492188 470.148438 611.035156 470.148438 C 616.109375 470.148438 620.125 469.738281 623.09375 468.914062 C 626.054688 468.089844 628.34375 466.527344 629.957031 464.21875 C 631.570312 461.914062 632.839844 458.589844 633.761719 454.242188 L 637.617188 454.242188 L 636.132812 475.089844 Z M 570.324219 475.089844 "/><path d="M 777.589844 389.222656 L 748.242188 389.222656 L 748.242188 382.503906 L 777.589844 382.503906 Z M 748.140625 444.160156 L 771.167969 444.160156 L 760.097656 414.714844 L 759.703125 414.714844 Z M 723.441406 475.089844 L 723.441406 471.234375 C 726.535156 470.90625 728.875 470.199219 730.457031 469.109375 C 732.035156 468.023438 733.386719 466.066406 734.507812 463.230469 L 760.296875 398.507812 L 765.929688 398.507812 L 788.855469 455.230469 C 790.367188 458.722656 791.652344 461.519531 792.707031 463.625 C 793.757812 465.738281 794.816406 467.300781 795.867188 468.320312 C 796.921875 469.34375 798.09375 470.050781 799.378906 470.445312 C 800.660156 470.839844 802.292969 471.070312 804.269531 471.136719 L 804.269531 475.089844 L 769.683594 475.089844 L 769.683594 471.136719 C 773.042969 471.070312 775.398438 470.742188 776.75 470.148438 C 778.097656 469.558594 778.773438 468.503906 778.773438 466.988281 C 778.773438 465.800781 778.59375 464.566406 778.230469 463.28125 C 777.867188 461.996094 777.257812 460.269531 776.402344 458.09375 L 773.144531 449.597656 L 746.066406 449.597656 C 744.089844 454.140625 742.671875 457.765625 741.816406 460.464844 C 740.960938 463.167969 740.535156 465.175781 740.535156 466.492188 C 740.535156 468.402344 741.207031 469.671875 742.558594 470.296875 C 743.910156 470.921875 746 471.234375 748.835938 471.234375 L 748.835938 475.089844 Z M 723.441406 475.089844 "/></svg></div>
+        <p class="font-script text-base text-sand">Made to matter.</p>
+        <p class="text-xs text-sand/70 max-w-sm leading-relaxed">Quiet strength. Sculpted proportion. Tactile restraint.</p>
+        <div class="flex flex-wrap items-center gap-4 pt-2 text-sand/70">
+          <a href="https://www.instagram.com/ila_thebrand" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors p-1" title="Instagram" aria-label="Instagram"><svg class="w-4 h-4 fill-current inline-block" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+          <a href="https://www.tiktok.com/@ila_thebrand" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors p-1" title="TikTok" aria-label="TikTok"><svg class="w-4 h-4 fill-current inline-block" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 2.89 3.5 2.76 1.12-.03 2.19-.6 2.77-1.57.34-.55.51-1.19.51-1.83.04-4.65.02-9.3.02-13.95z"/></svg></a>
+        </div>
+      </div>
+
+      <div class="space-y-3">
+        <h4 class="text-[11px] font-bold uppercase tracking-[0.2em] text-white">Shop Women</h4>
+        <ul class="space-y-2.5 text-sand/80">
+          <li><a href="collection-maroon.html" class="hover:text-white transition-colors">Maroon Collection</a></li>
+          <li><a href="collection-black.html" class="hover:text-white transition-colors">Black Collection</a></li>
+          <li><a href="shop.html" class="hover:text-white transition-colors">All Pieces</a></li>
+          <li><a href="shop.html?category=leather" class="hover:text-white transition-colors">Leather</a></li>
+          <li><a href="shop.html?category=denim" class="hover:text-white transition-colors">Denim</a></li>
+          <li><a href="shop.html?category=knitwear" class="hover:text-white transition-colors">Knitwear</a></li>
+          <li><a href="shop.html?category=tailoring" class="hover:text-white transition-colors">Tailoring</a></li>
+          <li><a href="shop.html?category=tops" class="hover:text-white transition-colors">Tops</a></li>
+        </ul>
+      </div>
+
+      <div class="space-y-3">
+        <h4 class="text-[11px] font-bold uppercase tracking-[0.2em] text-white">Contacts</h4>
+        <ul class="space-y-2.5 text-sand/80">
+          <li><a href="contact.html" class="hover:text-white transition-colors">Contact Us</a></li>
+          <li><a href="order-track.html" class="hover:text-white transition-colors">Track Your Order</a></li>
+          <li><a href="faq.html" class="hover:text-white transition-colors">FAQ</a></li>
+          <li><a href="size-guide.html" class="hover:text-white transition-colors">Size Guide</a></li>
+          <li><a href="shipping-policy.html" class="hover:text-white transition-colors">Shipping &amp; Delivery</a></li>
+          <li><a href="returns-policy.html" class="hover:text-white transition-colors">Returns &amp; Exchanges</a></li>
+        </ul>
+      </div>
+
+      <div class="space-y-3">
+        <h4 class="text-[11px] font-bold uppercase tracking-[0.2em] text-white">Atelier</h4>
+        <ul class="space-y-2.5 text-sand/80">
+          <li><a href="about-us.html" class="hover:text-white transition-colors">The Philosophy</a></li>
+          <li><a href="journal.html" class="hover:text-white transition-colors">Journal</a></li>
+          <li><a href="privacy-policy.html" class="hover:text-white transition-colors">Privacy</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-eggplant-light/30 py-6 px-4 text-center text-[11px] text-sand/60">
+      <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p>&copy; 2026 ILA. All rights reserved.</p>
+        <div class="flex items-center space-x-6">
+          <span>Prototype: prices and stock are placeholders</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

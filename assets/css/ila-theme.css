@@ -1,0 +1,269 @@
+/* ILA Brand System - Custom CSS Variables & Utilities */
+/* Fonts are self-hosted: see css/ila-fonts.css (loaded by layouts/app.blade.php) */
+
+:root {
+  --color-eggshell: #EAE5DF;
+  --color-eggplant: #44202F;
+  --color-black: #000000;
+  --color-white: #FFFFFF;
+  --color-sand: #D8D1C7;
+  --color-sand-light: #F7F5F2;
+  --color-eggplant-dark: #321622;
+  --color-eggplant-light: #5A2F41;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-script: 'Mrs Saint Delafield', cursive;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-black);
+  background-color: var(--color-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-script {
+  font-family: var(--font-script);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+/* Brand Background Utilities */
+.bg-eggshell {
+  background-color: var(--color-eggshell);
+}
+
+.bg-eggplant {
+  background-color: var(--color-eggplant);
+}
+
+.bg-eggplant-dark {
+  background-color: var(--color-eggplant-dark);
+}
+
+.bg-sand {
+  background-color: var(--color-sand);
+}
+
+.bg-sand-light {
+  background-color: var(--color-sand-light);
+}
+
+/* Brand Text Utilities */
+.text-eggplant {
+  color: var(--color-eggplant);
+}
+
+.text-eggshell {
+  color: var(--color-eggshell);
+}
+
+.text-sand {
+  color: var(--color-sand);
+}
+
+/* Brand Border Utilities */
+.border-eggshell {
+  border-color: var(--color-eggshell);
+}
+
+.border-eggplant {
+  border-color: var(--color-eggplant);
+}
+
+.border-sand {
+  border-color: var(--color-sand);
+}
+
+/* ILA Logo Typography & Monogram */
+.brand-logo-text {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 500;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+}
+
+.brand-monogram {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.brand-monogram .mono-i { position: absolute; top: 2px; left: 4px; }
+.brand-monogram .mono-a { position: absolute; top: 16px; right: 4px; }
+.brand-monogram .mono-l { position: absolute; bottom: 2px; left: 16px; }
+
+/* Buttons & CTAs */
+.btn-ila-primary {
+  background-color: var(--color-eggplant);
+  color: var(--color-white);
+  padding: 0.875rem 2rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 0px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-eggplant);
+}
+
+.btn-ila-primary:hover {
+  background-color: var(--color-black);
+  border-color: var(--color-black);
+  color: var(--color-white);
+}
+
+.btn-ila-secondary {
+  background-color: transparent;
+  color: var(--color-eggplant);
+  padding: 0.875rem 2rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 0px;
+  border: 1px solid var(--color-eggplant);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-ila-secondary:hover {
+  background-color: var(--color-eggplant);
+  color: var(--color-white);
+}
+
+.btn-ila-white {
+  background-color: var(--color-white);
+  color: var(--color-black);
+  padding: 0.875rem 2rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 0px;
+  border: 1px solid var(--color-white);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-ila-white:hover {
+  background-color: var(--color-eggplant);
+  border-color: var(--color-eggplant);
+  color: var(--color-white);
+}
+
+/* Product Card Effects */
+.product-card-media {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-sand-light);
+  aspect-ratio: 3 / 4;
+}
+
+.product-card-media img {
+  transition: opacity 0.4s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.product-card:hover .product-card-primary-img {
+  opacity: 0;
+}
+
+.product-card:hover .product-card-hover-img {
+  opacity: 1;
+  transform: scale(1.03);
+}
+
+.product-card-hover-img {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-card-actions {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.75rem;
+  display: flex;
+  gap: 0.5rem;
+  transform: translateY(100%);
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  background: linear-gradient(to top, rgba(0,0,0,0.35) 0%, transparent 100%);
+}
+
+.product-card:hover .product-card-actions {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Luxury Form Inputs */
+.form-input-ila {
+  width: 100%;
+  border: 1px solid #E5E0D8;
+  background-color: #FFFFFF;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  color: #1A1A1A;
+  border-radius: 0px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-input-ila:focus {
+  border-color: var(--color-eggplant);
+  box-shadow: 0 0 0 1px var(--color-eggplant);
+}
+
+/* Slide Over Drawer Styles */
+.drawer-backdrop {
+  background-color: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(2px);
+  transition: opacity 0.3s ease;
+}
+
+.drawer-panel {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-sand-light);
+}
+::-webkit-scrollbar-thumb {
+  background: #C4BDB5;
+  border-radius: 0px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-eggplant);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease forwards;
+}
